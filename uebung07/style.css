@@ -61,12 +61,14 @@ ul li:nth-child(even) a {
     transform: rotate(4deg);
     position: relative;
     top: 5px;
+    background: #ccffcc;
 }
 
 ul li:nth-child(3n) a {
     transform: rotate(-3deg);
     position: relative;
     top: -5px;
+    background: #ccccff;
 }
 
 ul li:nth-child(5n) a {
