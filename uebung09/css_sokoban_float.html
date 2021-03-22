@@ -11,7 +11,6 @@
             width: 700px;
             height: 600px;
             /* TODO: hier (falls nötig) CSS-Eigenschaften setzen (Eltern-Element) */
-            position: relative;
         }
         
         .child {
@@ -19,18 +18,17 @@
             width: 200px;
             height: 200px;
             /* TODO: hier (falls nötig) CSS-Eigenschaften setzen (beide Kinder) */
-            position: absolute;
-            margin-top: 200px;
+            float: left;
         }
         
         #c1 {
             /* TODO: hier (falls nötig) CSS-Eigenschaften setzen (linkes Kind) */
-            margin-left: 100px;
+            margin: 200px 0px 200px 100px;
         }
         
         #c2 {
             /* TODO: hier (falls nötig) CSS-Eigenschaften setzen (rechtes Kind) */
-            margin-left: 400px;
+            margin: 200px 100px 200px 100px;
         }
     </style>
 </head>
