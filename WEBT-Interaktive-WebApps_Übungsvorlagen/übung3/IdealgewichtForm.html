@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8">
+    <title>Übung 3b: Idealgewicht mit Form</title>
+    <script>
+function berechneIdealgewicht(geschlecht, groesse) {
+	// TODO: aus Aufgabe 3a übernehmen
+}
+
+function berechne() {
+	// Variablen
+
+	// TODO: holen der Daten aus Formular: Groesse und Geschlecht
+
+	// TODO: Aufruf der Funktion berechneIdealgewicht mit entspr. Daten des Formulars
+
+	// TODO: Ausgabe des Idealgewichts
+}
+
+    </script>
+</head>
+<body>
+
+<h2>Berechnung Idealgewicht</h2>
+	<form name="idealgewichtForm">
+	
+		<fieldset>
+			<legend><strong>Name</strong></legend>
+		
+			<label for="vorname">Vorname:</label>
+			<br/>
+			<input id="vorname" name="vorname" type="text" size="20" value="" />
+			<br/>
+			<label for="nachname">Nachname:</label>
+			<br/>
+			<input id="nachname" name="nachname" size="20" value="" />
+		</fieldset>
+		
+		<fieldset>
+			<legend><strong>Grösse</strong></legend>
+		
+			<label for="groesse">Grösse in cm:</label>
+			<br/>
+			<input name="groesse" id="groesse" type="text" size="10" value="" />
+			
+		</fieldset>
+		
+		<fieldset>
+			<legend><strong>Geschlecht</strong></legend>
+		
+			<label for="r1">weiblich:</label><br />
+			<input name = "geschlecht" id = "r1" type="radio" value="w" />
+			<br/>
+			<label for="r2">männlich:</label><br />
+			<input name="geschlecht"  id = "r2"  type="radio" value="m" />
+		</fieldset>
+		
+		<fieldset>
+			<legend><strong>Berechnen</strong></legend>        
+			<button type="button" name="berechnen" onClick = "berechne()">
+				Berechne Idealgewicht</button>
+		</fieldset>
+	
+	</form>
+</body>
+
+</html>

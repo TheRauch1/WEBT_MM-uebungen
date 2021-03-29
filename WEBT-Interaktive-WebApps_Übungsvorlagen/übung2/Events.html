@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung 2: Events</title>
+    <meta charset="utf8">
+</head>
+
+<body>
+    <h1 onmouseover="hover(true)" onmouseout="hover(false)">Events Übung</h1>
+    <p>Bitte geben Sie Ihre Mitteilung ein:</p>
+    <form>
+        <label for="mitteilung">Mitteilung:</label>
+        <input name="mitteilung" type="text">
+        <button type="submit" onclick="sendAlert()">Abschicken</button>
+    </form>
+</body>
+
+</html>
+
+<script>
+    function hover(param) {
+        if (param) {
+            document.getElementsByTagName('h1')[0].style.color = 'red'
+        } else {
+            document.getElementsByTagName('h1')[0].style.color = 'black'
+        }
+    }
+    
+    function sendAlert() {
+        alert('Knopf gedrückt')
+    }
+
+
+
+</script>
