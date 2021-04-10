@@ -10,9 +10,15 @@
 			let idealgewicht;
 
 			// TODO: Berechnung
+			if (geschlecht == 'm') {
+				idealgewicht = groesse - 100;
+			}
+			if (geschlecht == 'w') {
+				idealgewicht = 0.9 * (groesse - 100);
+			}
 
 			// TODO: Rückgabe Ergebnis	
-
+			return idealgewicht;
 		}
 	</script>
 </head>
@@ -21,6 +27,10 @@
 	<script>
 	// TODO: Aufruf der Funktion berechneIdealgewicht mit Beispielwerten und 
 	// Ausgabe mit alert
+	let mann = berechneIdealgewicht('m', 170);
+	let frau = berechneIdealgewicht('w', 170);
+
+	alert("Idealgewicht Mann: " + String(mann) + "& " + "Idealgewicht Frau: " + String(frau));
 	</script>
 </body>
 

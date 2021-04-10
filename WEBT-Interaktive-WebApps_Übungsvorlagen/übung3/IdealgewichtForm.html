@@ -2,67 +2,104 @@
 <html>
 
 <head>
-    <meta charset="utf8">
-    <title>Übung 3b: Idealgewicht mit Form</title>
-    <script>
-function berechneIdealgewicht(geschlecht, groesse) {
-	// TODO: aus Aufgabe 3a übernehmen
-}
+	<meta charset="utf8">
+	<title>Übung 3b: Idealgewicht mit Form</title>
+	<script>
+		function berechneIdealgewicht(geschlecht, groesse) {
+			// TODO: aus Aufgabe 3a übernehmen
+			// Variablen
+			let idealgewicht;
 
-function berechne() {
-	// Variablen
+			// TODO: Berechnung
+			if (geschlecht == 'm') {
+				idealgewicht = groesse - 100;
+			}
+			if (geschlecht == 'w') {
+				idealgewicht = 0.9 * (groesse - 100);
+			}
 
-	// TODO: holen der Daten aus Formular: Groesse und Geschlecht
+			// TODO: Rückgabe Ergebnis	
+			return idealgewicht;
+		}
 
-	// TODO: Aufruf der Funktion berechneIdealgewicht mit entspr. Daten des Formulars
+		function radioButtonAbfrage(name) {
+			let buttons;
 
-	// TODO: Ausgabe des Idealgewichts
-}
+			buttons = document.getElementsByName(name);
 
-    </script>
+			for (let i = 0; i < buttons.length; i++) {
+				let button = buttons[i];
+
+				if (button.checked) {
+					return button.value
+				}
+
+			}
+		}
+
+		function berechne() {
+			// Variablen
+			let groesse;
+			let geschlecht;
+			let idealgewicht;
+
+			// TODO: holen der Daten aus Formular: Groesse und Geschlecht
+			groesse = document.getElementById("groesse").value;
+			geschlecht = radioButtonAbfrage('geschlecht');
+
+			// TODO: Aufruf der Funktion berechneIdealgewicht mit entspr. Daten des Formulars
+			idealgewicht = berechneIdealgewicht(geschlecht, groesse);
+
+			// TODO: Ausgabe des Idealgewichts
+			alert("Idealgewicht: " + idealgewicht)
+		}
+
+
+	</script>
 </head>
+
 <body>
 
-<h2>Berechnung Idealgewicht</h2>
+	<h2>Berechnung Idealgewicht</h2>
 	<form name="idealgewichtForm">
-	
+
 		<fieldset>
 			<legend><strong>Name</strong></legend>
-		
+
 			<label for="vorname">Vorname:</label>
-			<br/>
+			<br />
 			<input id="vorname" name="vorname" type="text" size="20" value="" />
-			<br/>
+			<br />
 			<label for="nachname">Nachname:</label>
-			<br/>
+			<br />
 			<input id="nachname" name="nachname" size="20" value="" />
 		</fieldset>
-		
+
 		<fieldset>
 			<legend><strong>Grösse</strong></legend>
-		
+
 			<label for="groesse">Grösse in cm:</label>
-			<br/>
+			<br />
 			<input name="groesse" id="groesse" type="text" size="10" value="" />
-			
+
 		</fieldset>
-		
+
 		<fieldset>
 			<legend><strong>Geschlecht</strong></legend>
-		
+
 			<label for="r1">weiblich:</label><br />
-			<input name = "geschlecht" id = "r1" type="radio" value="w" />
-			<br/>
+			<input name="geschlecht" id="r1" type="radio" value="w" />
+			<br />
 			<label for="r2">männlich:</label><br />
-			<input name="geschlecht"  id = "r2"  type="radio" value="m" />
+			<input name="geschlecht" id="r2" type="radio" value="m" />
 		</fieldset>
-		
+
 		<fieldset>
-			<legend><strong>Berechnen</strong></legend>        
-			<button type="button" name="berechnen" onClick = "berechne()">
+			<legend><strong>Berechnen</strong></legend>
+			<button type="button" name="berechnen" onClick="berechne()">
 				Berechne Idealgewicht</button>
 		</fieldset>
-	
+
 	</form>
 </body>
 
