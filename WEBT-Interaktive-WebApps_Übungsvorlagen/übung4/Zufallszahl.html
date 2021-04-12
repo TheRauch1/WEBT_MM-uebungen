@@ -19,9 +19,11 @@
             let x = (Math.random() * (max - min)) + min;
             // TODO: Code gemaess Aufgabe ergaenzen
             if (x < 50) {
-                document.getElementById("zufallszahl").className = "green"
+                document.getElementById("zufallszahl").classList.add("green")
+                document.getElementById("zufallszahl").classList.remove("rot")
             } else {
-                document.getElementById("zufallszahl").className = "rot"
+                document.getElementById("zufallszahl").classList.add("rot")
+                document.getElementById("zufallszahl").classList.remove("green")
             }
             document.getElementById("zufallszahl").innerHTML = x
 
