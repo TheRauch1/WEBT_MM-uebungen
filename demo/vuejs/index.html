@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Vue JS test</title>
+</head>
+<body>
+    <div id="app">
+        <label for="input">Name: </label>
+        <input v-model="name" id="input">
+        <label><input v-model="vk" type="checkbox">Vorauskasse</label>
+        <p v-if="vk">Besten Dank dass sie per Vorauskasse bezahlen. Unsere Kontenangabe...</p>
+        <p v-else>Schade bezahlen sie nicht mit Vorauskasse</p>
+        <button v-on:click="name = ''" v-bind:disabled="name == ''">Reset</button>
+        <p>Hallo {{ name }}</p>
+
+        <div id="count">
+            <button v-on:click="counter++">Add</button>
+            <p>Clicked {{ counter }} times.</p>
+        </div>
+
+        <div id="val">
+            <button v-on:click="calculate(4, 3)">Berechne</button>
+        </div>
+
+        <ul id="data">
+            <li v-for="item in items">{{ item }}</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    let obj = {
+        name: "",
+        pretext: 'hallo',
+        vk: false,
+        counter: 0,
+        items: ["hallo", "welt", "!"]
+    }
+
+    new Vue({
+        el: '#app',
+        data: obj,
+        methods: {
+            calculate: function (a, b) {
+                return a*b
+            }
+        }
+    })
+    
+</script>

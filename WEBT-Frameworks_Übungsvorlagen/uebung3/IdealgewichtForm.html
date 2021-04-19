@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung 3: Idealgewicht mit Form</title>
+    <meta charset="utf8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- TODO: Setzen der ID "idealgewicht" auf dem korrekten HTML-Element -->
+    <h2>Berechnung Idealgewicht</h2>
+    <form id="idealgewicht">
+        <fieldset>
+            <legend><strong>Name</strong></legend>
+
+            <label for="vorname">Vorname:</label><br />
+            <input id="vorname" name="vorname" type="text" size="20" value="" /><br />
+            <label for="nachname">Nachname:</label><br />
+            <input id="nachname" name="nachname" size="20" value="" />
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Grösse</strong></legend>
+
+            <label for="groesse">Grösse in cm:</label><br />
+            <!-- Verbindung zu obj herstellen -->
+            <input id="groesse" type="text" size="10" value="" v-model="groesse" />
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Geschlecht</strong></legend>
+
+            <label for="r1">weiblich:</label><br />
+            <!-- Verbindung zu obj herstellen -->
+            <input name="geschlecht" id="r1" type="radio" value="w" v-model="geschlecht" /><br />
+            
+            <label for="r2">männlich:</label><br />
+            <!-- Verbindung zu obj herstellen -->
+            <input name="geschlecht" id="r2" type="radio" value="m" v-model="geschlecht"/>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Berechnung</strong></legend>
+            <!-- Idealgewicht ausgeben (untenstehende Methode verwenden) -->
+            <p>Idealgewicht: {{ berechneIdealgewicht() }}</p>
+
+        </fieldset>
+
+    </form>
+    <script>
+        let obj = { groesse: 165, geschlecht: "w", idealgewicht: undefined };
+        new Vue({
+            el: '#idealgewicht',
+            data: obj,
+            methods: {
+                berechneIdealgewicht: function() {
+                    // Realisierung der Funktion
+                    let idealgewicht;
+                    if (this.geschlecht == "m") {
+                        idealgewicht = this.groesse - 100;
+                    } else {
+                        idealgewicht = (this.groesse - 100) * 0.9;
+                    }
+                    return idealgewicht;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
