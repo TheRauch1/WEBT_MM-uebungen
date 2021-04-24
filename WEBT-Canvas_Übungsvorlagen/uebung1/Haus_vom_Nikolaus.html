@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Das Haus vom Nikolaus</title>
+        <meta charset="utf8">
+    </head>    
+    <body>
+        <canvas id="myCanvas" width="400px" height="500px"></canvas>
+        <script>
+            // TODO: Fragen Sie Canvas Elements und dessen Context ab
+            let canvas = document.getElementById('myCanvas');
+            let context = canvas.getContext('2d');
+
+            // TODO: Zeichnen Sie das Haus von Nikolaus
+            context.beginPath();
+            context.moveTo(100, 400);
+            context.lineTo(300, 400,);
+            context.lineTo(300, 200,);
+            context.lineTo(200, 100,);
+            context.lineTo(100, 200,);
+            context.lineTo(100, 400,);
+            context.lineTo(300, 200,);
+            context.lineTo(100, 200,);
+            context.lineTo(300, 400,);
+            context.stroke();
+            context.closePath();
+            
+        </script>
+    </body>
+</html>
