@@ -34,7 +34,14 @@ if (validateParameters()) {
         // TODO: $email und $kategorie in Tabelle mailing_list einfügen
         //       Resulat der Ausführung in $res speichern
 
+        $query = "insert into mailing_list (email, kategorie) values (?, ?)";
 
+        $statement = mysqli_prepare($conn, $query);
+
+        mysqli_stmt_bind_param($statement, 'si', $email, $kategorie);
+
+        mysqli_stmt_execute($statement);
+        $res = mysqli_stmt_get_result($statement);
 
         
         if ($res) {
